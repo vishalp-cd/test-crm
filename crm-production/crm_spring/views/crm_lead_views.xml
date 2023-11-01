@@ -1,0 +1,13 @@
+<odoo>
+    <record id="crm_lead_view_form_inherit_crm_spring" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.crm.spring</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='lead_info']//div[hasclass('o_row')][2]" position="after">
+                <field name="birthdate" string="BirthDate"/>
+                <field name="age" string="Age"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

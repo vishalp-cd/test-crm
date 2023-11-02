@@ -17,6 +17,9 @@ class TestCRMLead(TestCrmCommon):
 			'name': 'Lead 1',
 			'country_id': self.env.ref('base.us').id,
 			'birthdate': '1992-09-18',
+			'type': 'lead',
+			'email_from': 'vishal@gmail.com',
+			'phone': '2049014244'
 		})
 
 		self.assertEqual(lead.birthdate.strftime("%Y-%m-%d"), '1992-09-18')

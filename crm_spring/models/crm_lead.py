@@ -18,7 +18,7 @@ class CrmLead(models.Model):
             cal_age = ''
             if res.birthdate:
                 cal_age = (date.today() - res.birthdate) // timedelta(days=365.2425)
-            res.age = cal_age
+            res.age = str(cal_age - 2)
 
 
 

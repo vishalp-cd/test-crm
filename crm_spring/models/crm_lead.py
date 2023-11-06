@@ -8,6 +8,20 @@ class CrmLead(models.Model):
 
     birthdate = fields.Date(string="Birthdate")
     age = fields.Char(string="Age", compute="_compute_age")
+    first_name = fields.Char(string="Name")
+    last_name = fields.Char(string="Last Name")
+    name = fields.Char(compute="_compute_name")
+
+
+    @api.depends
+    def _compute_name(self):
+        for res in self:
+            name = ""
+            if res.first_name:
+                name += res.first_name
+            if res.last_name:
+                name += " " + res.last_name
+            res.name = name
 
 
     @api.depends('birthdate')

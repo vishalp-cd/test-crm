@@ -20,7 +20,7 @@ class CrmLead(models.Model):
             if res.first_name:
                 name += res.first_name
             if res.last_name:
-                name += " " + res.last_name
+                name += "-" + res.last_name
             res.name = name
 
 

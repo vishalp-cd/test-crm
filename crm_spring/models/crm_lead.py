@@ -13,8 +13,6 @@ class CrmLead(models.Model):
     @api.depends('birthdate')
     def _compute_age(self):
         for res in self:
-            # import pdb
-            # pdb.set_trace()
             cal_age = ''
             if res.birthdate:
                 cal_age = (date.today() - res.birthdate) // timedelta(days=365.2425)

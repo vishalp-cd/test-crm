@@ -8,6 +8,7 @@ class CrmLead(models.Model):
 
     birthdate = fields.Date(string="Birthdate")
     age = fields.Char(string="Age", compute="_compute_age")
+    
 
 
     @api.depends('birthdate')
